@@ -67,31 +67,33 @@
 
 <section class="bg-[#F0FDF4]">
         <div>
-            <h1 class="text-center text-2xl font-semibold ">Choose Your Trees</h1>
+            <h1 class="text-center text-2xl p-5 font-semibold ">Choose Your Trees</h1>
         </div>
-        <div class="ml-10 flex mt-10">
+        <div class="md:flex">
+        <div class="ml-10 md:flex mt-10">
         <div class="">
 
-            <h1 class="text-lg font-semibold"> Categories</h1>
+            <h1 class="text-lg font-semibold text-center md:text-left"> Categories</h1>
             
-            <ul id="categorie-container" class="text-sm clear-start space-y-2 mt-5 ">
+            <ul id="categorie-container" class="text-sm clear-start space-y-2 mt-5 text-center md:text-left ">
                 <li class="hover:bg-green-700 hover:text-white hover:rounded-lg ">All Trees</li>
             </ul>
 
         </div>
      <div id="card-container" class="max-w-7xl  mx-auto grid grid-cols-4 gap-5 ">
-
-       
-     </div>
-     <!-- <div class="grid mx-auto -ml-100  bg-white">
-        <h1>Your Cart</h1>
-       </div>
-            -->
-     
-
-
-
     </div>
+    </div>  
+    
+     <div  class="grid md:flex md:grid-cols-4 gap-4">
+       <div id="plants-container" class=" grid md:grid-cols-3  col-span-3 max-w-7xl  mx-auto  gap-5"></div>
+       <div id="hidden" class="bg-white grid grid-cols-1 h-[500px] w-[200px] mr-20 rounded-lg ">
+        <h1 class="text-3xl font-semibold p-5"> Your Cart</h1>
+       </div>
+       </div>
+        
+
+</div>
+
 </section>
 
 
