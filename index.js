@@ -1,9 +1,10 @@
 const categorieContainer = document.getElementById('categorie-container');
 const cardContainer = document.getElementById('card-container');
 const plantsContainer = document.getElementById('plants-container')
+const cartContainer = document.getElementById('cart-container') 
 
-
-
+let arr = []
+let total = 0;
 
 const loadcategorie = ()=>{
     
@@ -127,16 +128,19 @@ const loadAllPlants =()=>{
 const displayAllPlants = (trees)=>{
     
     trees.forEach(tree=>{
+        console.log(tree)
         
         plantsContainer.innerHTML+=`
-         <div class="bg-white rounded-xl  p-5 rounded-lg">
+         <div class="bg-white rounded-xl  p-5 rounded-lg ">
             <div class="">
             <img src="${tree.image}" class="rounded-xl w-full h-80" alt="">
             <h1 class=" text-sm font-bold my-2 ">${tree.name}</h1>
             <p class="text-sm ">${tree.description}</p>
             <div class="flex my-3 justify-between ">
                 <button class="btn bg-[#DCFCE7] text-[#15803D] rounded-4xl ">Fruit Tree</button>
+                <div id='${tree.id}' >
                 <p><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>${tree.price}</span></p>
+                </div>
             </div>
             <button class="btn rounded-3xl w-full text-white bg-[#15803D]">Add to Cart</button>
 
@@ -148,6 +152,62 @@ const displayAllPlants = (trees)=>{
     })
 
 }
+
+plantsContainer.addEventListener('click',(e)=>{
+    // console.log(e.target.innerHTML)
+    if(e.target.innerText === 'Add to Cart'){
+        // console.log('lakds')
+       
+    }
+    loadCart(e)
+
+})
+
+const loadCart=(e)=>{
+     const name=e.target.parentNode.children[1].innerText
+        const price = e.target.parentNode.children[3].innerText
+        console.log(price)
+        arr.push({
+        name:name,
+        price:price
+        })
+        showCart(arr)
+        let totalPrice = 0;
+        arr.forEach(c=>{
+        totalPrice=totalPrice+c.price
+        })
+        total = totalPrice;
+
+        console.log(total)
+
+}
+
+
+const showCart = (arrs)=>{
+    // console.log(arrs)
+    cartContainer.innerHTML="";
+    for(const arr of arrs){
+        console.log(arr)
+        cartContainer.innerHTML+=`
+       
+        <div>
+        <div class="bg-[#F0FDF4] rounded-xl mx-2 space-y-3 p-2">
+        <h1 class="text-xl font-bold">${arr.name}</h1>
+        <div class='flex gap-10' ><p class="text-sm"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${arr.price}</p>
+        <span onclick=""> <i class="fa-solid fa-xmark"></i></span>
+        </div>
+        </div>
+        <div class="mb-20 ml-30">
+            <h1 id="">total:0</h1>
+        </div>
+        `
+       
+    }
+     
+}
+
+
+
 
 loadAllPlants()
 
