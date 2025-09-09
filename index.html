@@ -66,19 +66,21 @@
 <!-- chose your tree -->
 
 <section class="bg-[#F0FDF4]">
-        <div>
+        <div >
             <h1 class="text-center text-2xl p-5 font-semibold ">Choose Your Trees</h1>
         </div>
         <div class="md:flex">
         <div class="ml-10 md:flex mt-10">
         <div class="">
-
             <h1 class="text-lg font-semibold text-center md:text-left"> Categories</h1>
-            
             <ul id="categorie-container" class="text-sm clear-start space-y-2 mt-5 text-center md:text-left ">
                 <li class="hover:bg-green-700 hover:text-white hover:rounded-lg ">All Trees</li>
+                
             </ul>
 
+        </div>
+        <div class="w-full h-full" style="display: none;" id="spainer">
+              <span class="loading h-20 w-20 loading-spinner loading-xl"></span>
         </div>
      <div id="card-container" class="max-w-7xl  mx-auto grid grid-cols-4 gap-5 ">
     </div>
@@ -86,9 +88,10 @@
     
      <div  class="grid md:flex md:grid-cols-4 gap-4">
        <div id="plants-container" class=" grid md:grid-cols-3  col-span-3 max-w-7xl  mx-auto  gap-5"></div>
-       <div id="hidden" class="bg-white grid grid-cols-1 h-[500px] w-[200px] mr-20 rounded-lg ">
-        <h1 class="text-3xl font-semibold p-5"> Your Cart</h1>
-        <div id="cart-container" >
+       <div id="hidden" class="bg-white overflow-hidden h-[500px] w-[200px] mr-20 rounded-lg ">
+        <h1 class="text-3xl font-semibold p-5 "> Your Cart</h1>
+          <h1 id="" >Total: <span class="ml-25"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span id="totalCount">0</span></span></h1>
+        <div id="cart-container">
        
         </div>
        </div>
@@ -98,6 +101,26 @@
 </div>
 
 </section>
+
+
+<!-- modal -->
+ <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="world_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+  <div id="modal-container">
+   
+
+  </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
 
 
 
